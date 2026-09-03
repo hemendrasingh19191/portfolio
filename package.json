@@ -1,0 +1,13 @@
+{
+  "name": "hemendra-portfolio",
+  "version": "1.0.0",
+  "description": "Personal portfolio website for Hemendra Singh — Data Engineer & Solution Architect",
+  "private": true,
+  "scripts": {
+    "build": "tailwindcss -i ./src/input.css -o ./assets/css/tailwind.css --minify",
+    "watch": "tailwindcss -i ./src/input.css -o ./assets/css/tailwind.css --watch"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.17"
+  }
+}

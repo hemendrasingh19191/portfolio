@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hemendra Singh — Data Engineer & Solution Architect</title>
+  <meta name="description" content="Hemendra Singh — Data Engineer & Solution Architect building scalable data platforms, pipelines and cloud-native systems. Available for consulting." />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Hemendra Singh — Data Engineer & Solution Architect" />
+  <meta property="og:description" content="Building scalable data platforms, pipelines and cloud-native systems." />
+  <meta property="og:type" content="website" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%236366f1'/><text x='50' y='68' font-size='54' font-family='Arial' font-weight='bold' text-anchor='middle' fill='%230b0f19'>HS</text></svg>" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <!-- Compiled Tailwind CSS (production build) -->
+  <link rel="stylesheet" href="assets/css/tailwind.css" />
+</head>
+
+<body class="bg-ink text-slate-200 font-sans antialiased selection:bg-accent/30">
+
+  <!-- Scroll progress bar -->
+  <div id="progress" class="fixed left-0 top-0 z-[60] h-1 w-0 bg-gradient-to-r from-accent to-accent2"></div>
+
+  <!-- Background glow -->
+  <div class="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
+    <div class="absolute -top-40 -left-40 h-96 w-96 rounded-full bg-accent/20 blur-3xl"></div>
+    <div class="absolute top-1/3 -right-40 h-96 w-96 rounded-full bg-accent2/10 blur-3xl"></div>
+    <div class="absolute bottom-0 left-1/3 h-96 w-96 rounded-full bg-indigo-700/10 blur-3xl"></div>
+  </div>
+
+  <!-- ===================== NAVBAR ===================== -->
+  <header id="navbar" class="fixed top-0 inset-x-0 z-50 transition-all duration-300">
+    <nav class="mx-auto flex max-w-6xl items-center justify-between px-6 py-5">
+      <a href="#home" class="group flex items-center gap-2 text-lg font-bold text-white">
+        <span class="grid h-9 w-9 place-items-center rounded-xl bg-gradient-to-br from-accent to-accent2 text-ink font-black">HS</span>
+        <span class="hidden sm:block">Hemendra<span class="text-accent">.</span></span>
+      </a>
+
+      <ul class="hidden items-center gap-8 text-sm font-medium text-slate-300 md:flex">
+        <li><a href="#home" class="nav-link transition hover:text-white">Home</a></li>
+        <li><a href="#about" class="nav-link transition hover:text-white">About</a></li>
+        <li><a href="#services" class="nav-link transition hover:text-white">Expertise</a></li>
+        <li><a href="#experience" class="nav-link transition hover:text-white">Experience</a></li>
+        <li><a href="#education" class="nav-link transition hover:text-white">Education</a></li>
+        <li><a href="#work" class="nav-link transition hover:text-white">Work</a></li>
+        <li><a href="#contact" class="nav-link transition hover:text-white">Contact</a></li>
+      </ul>
+
+      <a href="#contact" class="hidden rounded-full bg-white px-5 py-2 text-sm font-semibold text-ink transition hover:bg-accent hover:text-white md:inline-block">
+        Let's talk
+      </a>
+
+      <!-- Mobile toggle -->
+      <button id="menuBtn" class="grid h-10 w-10 place-items-center rounded-lg bg-panel md:hidden" aria-label="Toggle menu">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="h-5 w-5">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+        </svg>
+      </button>
+    </nav>
+
+    <!-- Mobile menu -->
+    <div id="mobileMenu" class="hidden border-t border-white/5 bg-ink/95 backdrop-blur md:hidden">
+      <ul class="flex flex-col gap-1 px-6 py-4 text-sm font-medium text-slate-300">
+        <li><a href="#home" class="block rounded-lg px-3 py-2 hover:bg-panel">Home</a></li>
+        <li><a href="#about" class="block rounded-lg px-3 py-2 hover:bg-panel">About</a></li>
+        <li><a href="#services" class="block rounded-lg px-3 py-2 hover:bg-panel">Expertise</a></li>
+        <li><a href="#experience" class="block rounded-lg px-3 py-2 hover:bg-panel">Experience</a></li>
+        <li><a href="#education" class="block rounded-lg px-3 py-2 hover:bg-panel">Education</a></li>
+        <li><a href="#work" class="block rounded-lg px-3 py-2 hover:bg-panel">Work</a></li>
+        <li><a href="#contact" class="block rounded-lg px-3 py-2 hover:bg-panel">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- ===================== HERO ===================== -->
+  <section id="home" class="relative flex min-h-screen items-center px-6 pt-28">
+    <!-- Hero background photo -->
+    <div class="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
+      <img src="assets/img/profile.jpg" alt="" aria-hidden="true"
+        class="h-full w-full object-cover object-top opacity-60" />
+      <div class="absolute inset-0 bg-gradient-to-b from-ink/40 via-ink/60 to-ink"></div>
+      <div class="absolute inset-0 bg-gradient-to-r from-ink/90 via-ink/40 to-transparent"></div>
+    </div>
+
+    <div class="mx-auto grid max-w-6xl items-center gap-12 md:grid-cols-[1.3fr_1fr]">
+      <div data-reveal>
+        <p class="mb-4 inline-flex items-center gap-2 rounded-full border border-white/10 bg-panel/60 px-4 py-1.5 text-sm text-slate-300">
+          <span class="h-2 w-2 animate-pulse rounded-full bg-green-400"></span>
+          Available for new projects
+        </p>
+        <h1 class="text-5xl font-black leading-[1.05] text-white sm:text-6xl lg:text-7xl">
+          Hello, I'm
+          <span class="bg-gradient-to-r from-accent via-indigo-400 to-accent2 bg-clip-text text-transparent">Hemendra Singh</span>
+        </h1>
+        <p class="mt-5 text-xl font-medium text-slate-300">
+          I'm a <span id="typed" class="text-accent2">Data Engineer</span><span class="typed-cursor text-accent2">|</span>
+        </p>
+        <p class="mt-4 max-w-xl text-lg leading-relaxed text-slate-400">
+          I build scalable data platforms and cloud-native systems — designing reliable
+          pipelines that turn raw data into trusted, decision-ready insights at scale.
+        </p>
+
+        <div class="mt-8 flex flex-wrap items-center gap-4">
+          <a href="#contact" class="rounded-full bg-gradient-to-r from-accent to-indigo-500 px-7 py-3 text-sm font-semibold text-white shadow-lg shadow-accent/25 transition hover:-translate-y-0.5 hover:shadow-accent/40">
+            Get in touch
+          </a>
+          <a href="#work" class="rounded-full border border-white/15 px-7 py-3 text-sm font-semibold text-white transition hover:bg-white hover:text-ink">
+            View my work
+          </a>
+        </div>
+
+        <!-- Social links -->
+        <div class="mt-8 flex items-center gap-4">
+          <a href="mailto:hemendrasingh19191@gmail.com" aria-label="Email" class="grid h-11 w-11 place-items-center rounded-xl border border-white/10 bg-panel/60 text-slate-300 transition hover:-translate-y-0.5 hover:border-accent/50 hover:text-white">
+            <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75l9.75 6 9.75-6M3.75 5.25h16.5a1.5 1.5 0 011.5 1.5v10.5a1.5 1.5 0 01-1.5 1.5H3.75a1.5 1.5 0 01-1.5-1.5V6.75a1.5 1.5 0 011.5-1.5z"/></svg>
+          </a>
+          <a href="tel:+919407313303" aria-label="Phone" class="grid h-11 w-11 place-items-center rounded-xl border border-white/10 bg-panel/60 text-slate-300 transition hover:-translate-y-0.5 hover:border-accent/50 hover:text-white">
+            <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/" target="_blank" rel="noopener" aria-label="LinkedIn" class="grid h-11 w-11 place-items-center rounded-xl border border-white/10 bg-panel/60 text-slate-300 transition hover:-translate-y-0.5 hover:border-accent/50 hover:text-white">
+            <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path d="M4.98 3.5a2.5 2.5 0 11-.02 5 2.5 2.5 0 01.02-5zM3 8.98h4v12H3v-12zM9 8.98h3.8v1.64h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1v6.31h-4v-5.6c0-1.33-.02-3.05-1.86-3.05-1.86 0-2.14 1.45-2.14 2.95v5.7H9v-12z"/></svg>
+          </a>
+        </div>
+
+        <div class="mt-10 flex flex-wrap gap-8">
+          <div>
+            <p class="text-3xl font-bold text-white"><span class="counter" data-target="12">0</span>+</p>
+            <p class="text-sm text-slate-400">Years experience</p>
+          </div>
+          <div>
+            <p class="text-3xl font-bold text-white"><span class="counter" data-target="50">0</span>+</p>
+            <p class="text-sm text-slate-400">Systems delivered</p>
+          </div>
+          <div>
+            <p class="text-3xl font-bold text-white"><span class="counter" data-target="15">0</span>+</p>
+            <p class="text-sm text-slate-400">Enterprise clients</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Avatar / card -->
+      <div class="relative mx-auto w-full max-w-sm" data-reveal>
+        <div class="animate-float rounded-3xl border border-white/10 bg-gradient-to-br from-panel to-ink p-8 shadow-2xl">
+          <div class="mx-auto h-40 w-40 overflow-hidden rounded-full ring-4 ring-accent/40 shadow-lg shadow-accent/20">
+            <img src="assets/img/avatar.jpg" alt="Portrait of Hemendra Singh"
+              class="h-full w-full object-cover" style="object-position: 50% 18%;" />
+          </div>
+          <h3 class="mt-6 text-center text-xl font-bold text-white">Hemendra Singh</h3>
+          <p class="text-center text-accent">Data Engineer &amp; Solution Architect</p>
+
+          <div class="mt-6 space-y-3 text-sm">
+            <a href="tel:+919407313303" class="flex items-center gap-3 rounded-xl bg-white/5 px-4 py-3 transition hover:bg-white/10">
+              <span class="grid h-8 w-8 place-items-center rounded-lg bg-accent/20 text-accent">📞</span>
+              +91 94073 13303
+            </a>
+            <a href="mailto:hemendrasingh19191@gmail.com" class="flex items-center gap-3 rounded-xl bg-white/5 px-4 py-3 transition hover:bg-white/10">
+              <span class="grid h-8 w-8 place-items-center rounded-lg bg-accent2/20 text-accent2">✉️</span>
+              <span class="truncate">hemendrasingh19191@gmail.com</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== TECH MARQUEE ===================== -->
+  <section class="border-y border-white/5 bg-panel/30 py-8">
+    <div class="relative mx-auto max-w-full overflow-hidden">
+      <div class="flex w-max animate-marquee gap-12 whitespace-nowrap px-6 text-lg font-semibold text-slate-400">
+        <span>Apache Spark</span><span>Airflow</span><span>Databricks</span><span>Snowflake</span><span>Kafka</span><span>dbt</span><span>Python</span><span>SQL</span><span>Java</span><span>Spring Boot</span><span>AWS</span><span>Azure</span><span>Delta Lake</span><span>Data Lakehouse</span>
+        <span>Apache Spark</span><span>Airflow</span><span>Databricks</span><span>Snowflake</span><span>Kafka</span><span>dbt</span><span>Python</span><span>SQL</span><span>Java</span><span>Spring Boot</span><span>AWS</span><span>Azure</span><span>Delta Lake</span><span>Data Lakehouse</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== ABOUT ===================== -->
+  <section id="about" class="px-6 py-24">
+    <div class="mx-auto grid max-w-6xl items-center gap-12 md:grid-cols-[0.9fr_1.1fr]">
+      <!-- About photo -->
+      <div class="relative mx-auto w-full max-w-sm" data-reveal>
+        <div class="overflow-hidden rounded-3xl border border-white/10 shadow-2xl">
+          <img src="assets/img/avatar.jpg" alt="Hemendra Singh" class="h-full w-full object-cover" />
+        </div>
+        <div class="absolute -bottom-5 -right-5 rounded-2xl border border-white/10 bg-panel px-5 py-4 shadow-xl">
+          <p class="text-2xl font-bold text-white">12+ yrs</p>
+          <p class="text-xs text-slate-400">Building data platforms</p>
+        </div>
+      </div>
+
+      <div data-reveal>
+        <p class="mb-3 text-sm font-semibold uppercase tracking-widest text-accent">About me</p>
+        <h2 class="text-4xl font-bold text-white">Get to know me better.</h2>
+        <p class="mt-6 leading-relaxed text-slate-400">
+          I'm a Data Engineer and Solution Architect who loves turning messy, high-volume data
+          into reliable pipelines and well-architected platforms. I partner with data, product
+          and business teams to make data trustworthy, timely and easy to use.
+        </p>
+        <p class="mt-4 leading-relaxed text-slate-400">
+          From batch and streaming pipelines to lakehouse design, data modeling and cloud
+          architecture, I bring clarity to complexity — building systems that scale, stay
+          observable, and empower analytics and ML across the organization.
+        </p>
+
+        <div class="mt-8 grid grid-cols-2 gap-4 text-sm">
+          <div class="rounded-xl border border-white/10 bg-panel/50 p-4">
+            <p class="font-semibold text-white">Role</p>
+            <p class="text-slate-400">Data Engineer &amp; Solution Architect</p>
+          </div>
+          <div class="rounded-xl border border-white/10 bg-panel/50 p-4">
+            <p class="font-semibold text-white">Location</p>
+            <p class="text-slate-400">India · Remote</p>
+          </div>
+          <div class="rounded-xl border border-white/10 bg-panel/50 p-4">
+            <p class="font-semibold text-white">Email</p>
+            <p class="truncate text-slate-400">hemendrasingh19191@gmail.com</p>
+          </div>
+          <div class="rounded-xl border border-white/10 bg-panel/50 p-4">
+            <p class="font-semibold text-white">Phone</p>
+            <p class="text-slate-400">+91 94073 13303</p>
+          </div>
+        </div>
+
+        <!-- Skills -->
+        <div class="mt-8 space-y-5">
+          <div>
+            <div class="mb-2 flex justify-between text-sm"><span>Data Pipelines (Spark / Airflow)</span><span class="text-slate-400">95%</span></div>
+            <div class="h-2 rounded-full bg-white/10"><div class="skill-bar h-2 rounded-full bg-gradient-to-r from-accent to-accent2" style="--w:95%"></div></div>
+          </div>
+          <div>
+            <div class="mb-2 flex justify-between text-sm"><span>Data Warehousing (Snowflake / Databricks)</span><span class="text-slate-400">92%</span></div>
+            <div class="h-2 rounded-full bg-white/10"><div class="skill-bar h-2 rounded-full bg-gradient-to-r from-accent to-accent2" style="--w:92%"></div></div>
+          </div>
+          <div>
+            <div class="mb-2 flex justify-between text-sm"><span>Cloud Data Architecture (AWS / Azure)</span><span class="text-slate-400">90%</span></div>
+            <div class="h-2 rounded-full bg-white/10"><div class="skill-bar h-2 rounded-full bg-gradient-to-r from-accent to-accent2" style="--w:90%"></div></div>
+          </div>
+          <div>
+            <div class="mb-2 flex justify-between text-sm"><span>Python &amp; SQL</span><span class="text-slate-400">93%</span></div>
+            <div class="h-2 rounded-full bg-white/10"><div class="skill-bar h-2 rounded-full bg-gradient-to-r from-accent to-accent2" style="--w:93%"></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== SERVICES / EXPERTISE ===================== -->
+  <section id="services" class="px-6 py-24">
+    <div class="mx-auto max-w-6xl">
+      <div class="mb-14 max-w-2xl" data-reveal>
+        <p class="mb-3 text-sm font-semibold uppercase tracking-widest text-accent">What I do</p>
+        <h2 class="text-4xl font-bold text-white">Data platforms that scale with your business.</h2>
+      </div>
+
+      <div class="grid gap-6 md:grid-cols-3">
+        <article data-reveal class="group rounded-2xl border border-white/10 bg-panel/50 p-8 transition hover:-translate-y-1 hover:border-accent/40">
+          <div class="mb-5 grid h-12 w-12 place-items-center rounded-xl bg-accent/15 text-2xl">🔀</div>
+          <h3 class="text-xl font-semibold text-white">Data Pipelines &amp; ETL</h3>
+          <p class="mt-3 text-sm leading-relaxed text-slate-400">
+            Design robust batch and streaming pipelines with Spark, Airflow and dbt that move
+            and transform data reliably at scale.
+          </p>
+        </article>
+
+        <article data-reveal class="group rounded-2xl border border-white/10 bg-panel/50 p-8 transition hover:-translate-y-1 hover:border-accent/40">
+          <div class="mb-5 grid h-12 w-12 place-items-center rounded-xl bg-accent2/15 text-2xl">🏛️</div>
+          <h3 class="text-xl font-semibold text-white">Lakehouse &amp; Warehousing</h3>
+          <p class="mt-3 text-sm leading-relaxed text-slate-400">
+            Build modern data lakehouses on Databricks, Snowflake and Delta Lake with clean,
+            performant data models.
+          </p>
+        </article>
+
+        <article data-reveal class="group rounded-2xl border border-white/10 bg-panel/50 p-8 transition hover:-translate-y-1 hover:border-accent/40">
+          <div class="mb-5 grid h-12 w-12 place-items-center rounded-xl bg-indigo-500/15 text-2xl">⚡</div>
+          <h3 class="text-xl font-semibold text-white">Real-Time Streaming</h3>
+          <p class="mt-3 text-sm leading-relaxed text-slate-400">
+            Architect event-driven, low-latency streaming platforms with Kafka and Spark
+            Structured Streaming.
+          </p>
+        </article>
+
+        <article data-reveal class="group rounded-2xl border border-white/10 bg-panel/50 p-8 transition hover:-translate-y-1 hover:border-accent/40">
+          <div class="mb-5 grid h-12 w-12 place-items-center rounded-xl bg-accent/15 text-2xl">☁️</div>
+          <h3 class="text-xl font-semibold text-white">Cloud Data Architecture</h3>
+          <p class="mt-3 text-sm leading-relaxed text-slate-400">
+            Design cost-optimized, secure data platforms on AWS &amp; Azure with the right
+            storage, compute and governance.
+          </p>
+        </article>
+
+        <article data-reveal class="group rounded-2xl border border-white/10 bg-panel/50 p-8 transition hover:-translate-y-1 hover:border-accent/40">
+          <div class="mb-5 grid h-12 w-12 place-items-center rounded-xl bg-accent2/15 text-2xl">📈</div>
+          <h3 class="text-xl font-semibold text-white">Analytics &amp; ML Enablement</h3>
+          <p class="mt-3 text-sm leading-relaxed text-slate-400">
+            Deliver trusted, well-modeled datasets and feature pipelines that power BI
+            dashboards and machine learning.
+          </p>
+        </article>
+
+        <article data-reveal class="group rounded-2xl border border-white/10 bg-panel/50 p-8 transition hover:-translate-y-1 hover:border-accent/40">
+          <div class="mb-5 grid h-12 w-12 place-items-center rounded-xl bg-indigo-500/15 text-2xl">🛡️</div>
+          <h3 class="text-xl font-semibold text-white">Data Quality &amp; Governance</h3>
+          <p class="mt-3 text-sm leading-relaxed text-slate-400">
+            Embed data quality checks, lineage, cataloging and governance so data stays
+            reliable and compliant.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== EXPERIENCE ===================== -->
+  <section id="experience" class="px-6 py-24">
+    <div class="mx-auto max-w-4xl">
+      <div class="mb-14" data-reveal>
+        <p class="mb-3 text-sm font-semibold uppercase tracking-widest text-accent">Career path</p>
+        <h2 class="text-4xl font-bold text-white">Experience &amp; milestones.</h2>
+      </div>
+
+      <div class="relative border-l border-white/10 pl-8">
+        <div data-reveal class="relative mb-10">
+          <span class="absolute -left-[41px] grid h-6 w-6 place-items-center rounded-full border-2 border-accent bg-ink"><span class="h-2 w-2 rounded-full bg-accent"></span></span>
+          <p class="text-sm text-accent2">2021 — Present</p>
+          <h3 class="mt-1 text-xl font-semibold text-white">Solution Architect (Data)</h3>
+          <p class="text-sm text-slate-500">Enterprise Data Platforms &amp; Cloud</p>
+          <p class="mt-3 text-slate-400">Lead the architecture of cloud data platforms and lakehouses, define data reference architectures, and guide teams through large-scale pipeline and migration programs.</p>
+        </div>
+
+        <div data-reveal class="relative mb-10">
+          <span class="absolute -left-[41px] grid h-6 w-6 place-items-center rounded-full border-2 border-accent bg-ink"><span class="h-2 w-2 rounded-full bg-accent"></span></span>
+          <p class="text-sm text-accent2">2017 — 2021</p>
+          <h3 class="mt-1 text-xl font-semibold text-white">Senior Data Engineer / Tech Lead</h3>
+          <p class="text-sm text-slate-500">Big Data &amp; Streaming</p>
+          <p class="mt-3 text-slate-400">Built high-throughput batch and streaming pipelines with Spark, Kafka and Airflow, modeled data warehouses, and established CI/CD and data observability practices.</p>
+        </div>
+
+        <div data-reveal class="relative">
+          <span class="absolute -left-[41px] grid h-6 w-6 place-items-center rounded-full border-2 border-accent bg-ink"><span class="h-2 w-2 rounded-full bg-accent"></span></span>
+          <p class="text-sm text-accent2">2014 — 2017</p>
+          <h3 class="mt-1 text-xl font-semibold text-white">Data Engineer</h3>
+          <p class="text-sm text-slate-500">ETL &amp; Databases</p>
+          <p class="mt-3 text-slate-400">Developed ETL workflows and SQL-based data solutions, laying the foundation in data modeling, warehousing and clean, reliable data engineering.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== EDUCATION ===================== -->
+  <section id="education" class="px-6 py-24">
+    <div class="mx-auto max-w-6xl">
+      <div class="mb-14 max-w-2xl" data-reveal>
+        <p class="mb-3 text-sm font-semibold uppercase tracking-widest text-accent">Education</p>
+        <h2 class="text-4xl font-bold text-white">Academic background.</h2>
+      </div>
+
+      <div class="grid gap-6 md:grid-cols-2">
+        <article data-reveal class="group rounded-2xl border border-white/10 bg-panel/50 p-8 transition hover:-translate-y-1 hover:border-accent/40">
+          <div class="mb-5 grid h-12 w-12 place-items-center rounded-xl bg-accent2/15 text-2xl">🎓</div>
+          <p class="text-sm text-accent2">Postgraduate</p>
+          <h3 class="mt-1 text-xl font-semibold text-white">M.Tech in Software Engineering</h3>
+          <p class="mt-3 text-sm leading-relaxed text-slate-400">
+            Advanced study in software engineering — deepening expertise in system design,
+            data-intensive applications and scalable architecture.
+          </p>
+        </article>
+
+        <article data-reveal class="group rounded-2xl border border-white/10 bg-panel/50 p-8 transition hover:-translate-y-1 hover:border-accent/40">
+          <div class="mb-5 grid h-12 w-12 place-items-center rounded-xl bg-accent/15 text-2xl">🎓</div>
+          <p class="text-sm text-accent2">Undergraduate</p>
+          <h3 class="mt-1 text-xl font-semibold text-white">B.Tech in Information Technology</h3>
+          <p class="mt-3 text-sm leading-relaxed text-slate-400">
+            Foundation in computer science and information technology — programming, databases,
+            data structures and the fundamentals of building reliable systems.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== WORK ===================== -->
+  <section id="work" class="px-6 py-24">
+    <div class="mx-auto max-w-6xl">
+      <div class="mb-14 max-w-2xl" data-reveal>
+        <p class="mb-3 text-sm font-semibold uppercase tracking-widest text-accent">Selected work</p>
+        <h2 class="text-4xl font-bold text-white">Projects I'm proud of.</h2>
+      </div>
+
+      <div class="grid gap-6 md:grid-cols-2">
+        <article data-reveal class="group overflow-hidden rounded-2xl border border-white/10 bg-panel/50 transition hover:-translate-y-1 hover:border-accent/40">
+          <div class="flex h-48 items-center justify-center bg-gradient-to-br from-accent/30 to-indigo-700/20 text-5xl transition group-hover:scale-105">�️</div>
+          <div class="p-6">
+            <div class="flex flex-wrap gap-2 text-xs text-slate-400">
+              <span class="rounded-full bg-white/5 px-3 py-1">Lakehouse</span>
+              <span class="rounded-full bg-white/5 px-3 py-1">Databricks</span>
+            </div>
+            <h3 class="mt-4 text-xl font-semibold text-white">Enterprise Data Lakehouse</h3>
+            <p class="mt-2 text-sm text-slate-400">Designed a Delta Lakehouse on Databricks unifying 200+ sources, cutting reporting latency from days to minutes.</p>
+          </div>
+        </article>
+
+        <article data-reveal class="group overflow-hidden rounded-2xl border border-white/10 bg-panel/50 transition hover:-translate-y-1 hover:border-accent/40">
+          <div class="flex h-48 items-center justify-center bg-gradient-to-br from-accent2/30 to-cyan-700/20 text-5xl transition group-hover:scale-105">⚡</div>
+          <div class="p-6">
+            <div class="flex flex-wrap gap-2 text-xs text-slate-400">
+              <span class="rounded-full bg-white/5 px-3 py-1">Streaming</span>
+              <span class="rounded-full bg-white/5 px-3 py-1">Kafka</span>
+            </div>
+            <h3 class="mt-4 text-xl font-semibold text-white">Real-Time Event Pipeline</h3>
+            <p class="mt-2 text-sm text-slate-400">Built a Kafka + Spark streaming platform ingesting 10M+ events/day with sub-second processing and 99.99% uptime.</p>
+          </div>
+        </article>
+
+        <article data-reveal class="group overflow-hidden rounded-2xl border border-white/10 bg-panel/50 transition hover:-translate-y-1 hover:border-accent/40">
+          <div class="flex h-48 items-center justify-center bg-gradient-to-br from-indigo-500/30 to-purple-700/20 text-5xl transition group-hover:scale-105">❄️</div>
+          <div class="p-6">
+            <div class="flex flex-wrap gap-2 text-xs text-slate-400">
+              <span class="rounded-full bg-white/5 px-3 py-1">Warehouse</span>
+              <span class="rounded-full bg-white/5 px-3 py-1">Snowflake</span>
+            </div>
+            <h3 class="mt-4 text-xl font-semibold text-white">Snowflake Migration &amp; Modeling</h3>
+            <p class="mt-2 text-sm text-slate-400">Migrated a legacy warehouse to Snowflake with dbt models, cutting compute costs by 45% and speeding analytics.</p>
+          </div>
+        </article>
+
+        <article data-reveal class="group overflow-hidden rounded-2xl border border-white/10 bg-panel/50 transition hover:-translate-y-1 hover:border-accent/40">
+          <div class="flex h-48 items-center justify-center bg-gradient-to-br from-emerald-500/30 to-teal-700/20 text-5xl transition group-hover:scale-105">🤖</div>
+          <div class="p-6">
+            <div class="flex flex-wrap gap-2 text-xs text-slate-400">
+              <span class="rounded-full bg-white/5 px-3 py-1">ML Platform</span>
+              <span class="rounded-full bg-white/5 px-3 py-1">Feature Store</span>
+            </div>
+            <h3 class="mt-4 text-xl font-semibold text-white">ML Feature Pipeline</h3>
+            <p class="mt-2 text-sm text-slate-400">Delivered a governed feature store and pipelines that powered production ML models with reliable, versioned data.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== TESTIMONIALS ===================== -->
+  <section class="px-6 py-24">
+    <div class="mx-auto max-w-6xl">
+      <div class="mb-14 max-w-2xl" data-reveal>
+        <p class="mb-3 text-sm font-semibold uppercase tracking-widest text-accent">Testimonials</p>
+        <h2 class="text-4xl font-bold text-white">What people say.</h2>
+      </div>
+
+      <div class="grid gap-6 md:grid-cols-3">
+        <figure data-reveal class="rounded-2xl border border-white/10 bg-panel/50 p-8">
+          <div class="mb-4 text-accent">★★★★★</div>
+          <blockquote class="text-slate-300">"Hemendra rebuilt our data pipelines from the ground up. Reports that took hours now run in minutes — and we finally trust the numbers."</blockquote>
+          <figcaption class="mt-6 flex items-center gap-3">
+            <span class="grid h-10 w-10 place-items-center rounded-full bg-accent/20 font-bold text-accent">A</span>
+            <div><p class="font-semibold text-white">Engineering Director</p><p class="text-xs text-slate-500">FinTech</p></div>
+          </figcaption>
+        </figure>
+
+        <figure data-reveal class="rounded-2xl border border-white/10 bg-panel/50 p-8">
+          <div class="mb-4 text-accent">★★★★★</div>
+          <blockquote class="text-slate-300">"A rare mix of deep data engineering skill and architecture vision. He made our lakehouse fast, reliable and easy to work with."</blockquote>
+          <figcaption class="mt-6 flex items-center gap-3">
+            <span class="grid h-10 w-10 place-items-center rounded-full bg-accent2/20 font-bold text-accent2">R</span>
+            <div><p class="font-semibold text-white">Product Lead</p><p class="text-xs text-slate-500">Retail</p></div>
+          </figcaption>
+        </figure>
+
+        <figure data-reveal class="rounded-2xl border border-white/10 bg-panel/50 p-8">
+          <div class="mb-4 text-accent">★★★★★</div>
+          <blockquote class="text-slate-300">"Our streaming platform finally scales without firefighting. Data quality and delivery are night-and-day better thanks to him."</blockquote>
+          <figcaption class="mt-6 flex items-center gap-3">
+            <span class="grid h-10 w-10 place-items-center rounded-full bg-indigo-500/20 font-bold text-indigo-300">S</span>
+            <div><p class="font-semibold text-white">CTO</p><p class="text-xs text-slate-500">HealthTech</p></div>
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CONTACT ===================== -->
+  <section id="contact" class="px-6 py-24">
+    <div class="mx-auto max-w-5xl rounded-3xl border border-white/10 bg-gradient-to-br from-panel to-ink p-8 shadow-2xl md:p-12">
+      <div class="grid gap-10 md:grid-cols-2">
+        <div data-reveal>
+          <p class="mb-3 text-sm font-semibold uppercase tracking-widest text-accent">Contact</p>
+          <h2 class="text-4xl font-bold text-white">Let's work together.</h2>
+          <p class="mt-4 text-slate-400">
+            Have a project, a system to scale, or an architecture to review? I'd love to hear about
+            it. Reach out and let's build something great.
+          </p>
+
+          <div class="mt-8 space-y-4 text-sm">
+            <a href="mailto:hemendrasingh19191@gmail.com" class="flex items-center gap-3 text-slate-300 transition hover:text-white">
+              <span class="grid h-10 w-10 place-items-center rounded-xl bg-accent/15 text-accent">✉️</span>
+              hemendrasingh19191@gmail.com
+            </a>
+            <a href="tel:+919407313303" class="flex items-center gap-3 text-slate-300 transition hover:text-white">
+              <span class="grid h-10 w-10 place-items-center rounded-xl bg-accent2/15 text-accent2">📞</span>
+              +91 94073 13303
+            </a>
+            <p class="flex items-center gap-3 text-slate-300">
+              <span class="grid h-10 w-10 place-items-center rounded-xl bg-indigo-500/15 text-indigo-300">📍</span>
+              India · Available Remote
+            </p>
+          </div>
+        </div>
+
+        <!-- Form opens the user's email client via mailto -->
+        <form id="contactForm" data-reveal class="space-y-4">
+          <div>
+            <label for="name" class="mb-1 block text-sm text-slate-300">Name</label>
+            <input id="name" name="name" type="text" required placeholder="Your name"
+              class="w-full rounded-xl border border-white/10 bg-ink/60 px-4 py-3 text-sm text-white outline-none transition focus:border-accent" />
+          </div>
+          <div>
+            <label for="email" class="mb-1 block text-sm text-slate-300">Email</label>
+            <input id="email" name="email" type="email" required placeholder="you@example.com"
+              class="w-full rounded-xl border border-white/10 bg-ink/60 px-4 py-3 text-sm text-white outline-none transition focus:border-accent" />
+          </div>
+          <div>
+            <label for="message" class="mb-1 block text-sm text-slate-300">Message</label>
+            <textarea id="message" name="message" rows="4" required placeholder="Tell me about your project..."
+              class="w-full rounded-xl border border-white/10 bg-ink/60 px-4 py-3 text-sm text-white outline-none transition focus:border-accent"></textarea>
+          </div>
+          <button type="submit"
+            class="w-full rounded-full bg-gradient-to-r from-accent to-indigo-500 px-8 py-3 text-sm font-semibold text-white shadow-lg shadow-accent/25 transition hover:-translate-y-0.5">
+            Send message
+          </button>
+          <p id="formNote" class="hidden text-center text-sm text-accent2"></p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="border-t border-white/5 px-6 py-10">
+    <div class="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 text-sm text-slate-500 sm:flex-row">
+      <p>© <span id="year"></span> Hemendra Singh · Data Engineer &amp; Solution Architect</p>
+      <div class="flex items-center gap-6">
+        <a href="mailto:hemendrasingh19191@gmail.com" class="transition hover:text-white">Email</a>
+        <a href="tel:+919407313303" class="transition hover:text-white">Phone</a>
+        <a href="https://www.linkedin.com/" target="_blank" rel="noopener" class="transition hover:text-white">LinkedIn</a>
+        <a href="#home" class="transition hover:text-white">Back to top ↑</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to top button -->
+  <a href="#home" id="toTop" class="fixed bottom-6 right-6 z-50 hidden h-12 w-12 place-items-center rounded-full bg-gradient-to-r from-accent to-indigo-500 text-white shadow-lg shadow-accent/30 transition hover:-translate-y-1">
+    <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5"/></svg>
+  </a>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
